@@ -1,12 +1,12 @@
 FROM centos:7.9.2009
-MAINTAINER suryaashokkumar.r@gmail.com
+MAINTAINER suryaashokkumr.r@gmail.com
 RUN yum install -y httpd \
-  zip \
- unzip
-ADD https://www.free-css.com/assests/files/free-css-templetes/dowload/page258/loxury.zip /var/www/html/
+zip \
+unzip
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page247/kindle.zip /var/www/html/
 WORKDIR /var/www/html
-RUN unzip loxury.zip
-RUN cp -rvf loxury/*
-RUN rm -rf loxury loxury.zip
+RUN unzip kindle.zip
+RUN cp -rvf markups-kindle/* .
+RUN rm -rf _MACOSX markups-kindle kindle.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80
